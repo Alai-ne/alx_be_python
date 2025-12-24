@@ -1,22 +1,26 @@
-task = input("Enter a task description: ")
-priority = input("Enter the task's priority (high, medium, low): ").lower()
-time_bound = input("Is the task time-bound (yes or no)? ").lower()
+task = input("Enter your task for today: ")
 
-reminder_message = f"Reminder: '{task}' has {priority} priority"
-time_sensitive_message = ''
 
-if time_bound == 'yes':
-    time_sensitive_message = ' that requires immediate attention today!'
+priority = input("Enter the task priority (high, medium, low): ").lower()
+time_bound = input("Is this task time-bound? (yes/no): ").lower()
+reminder = f"Reminder: Your task is '{task}'. "
 
-if priority == 'high':
-    pass
-elif priority == 'medium':
-    pass
-elif priority == 'low':
-    pass
+if priority == "high":
+    reminder += "This is a HIGH priority task. "
+elif priority == "medium":
+    reminder += "This is a MEDIUM priority task. "
+elif priority == "low":
+    reminder += "This is a LOW priority task. "
 else:
-    reminder_message = f"Reminder: '{task}' has an unspecified priority"
+    reminder += "Priority not recognized. "
 
-full_reminder = reminder_message + time_sensitive_message
-print(full_reminder)
+
+if time_bound == "yes":
+    reminder += "This task requires immediate attention today!"
+else:
+    reminder += "You can complete this task at your convenience today."
+
+
+for i in range(1):
+    print("\n" + reminder)
 
