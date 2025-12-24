@@ -1,15 +1,15 @@
-def perform_operation(num1,num2,operation):
-    operation = operation.lower().strip()
+def perform_operation(num1: float, num2: float, operation: str):
 
-    if operation == "add":
+    if operation == 'add':
         result = num1 + num2
-    elif operation  == "substract":
+    elif operation  == 'substract':
         result =  num1 - num2
-    elif operation == "multiply":
+    elif operation == 'multiply':
         result = num1 * num2
-    elif operation == "divide":
+    elif operation == 'divide':
         if num2 == 0:
-            print( "Error:can't divide by zero !")
+            return "Error:can't divide by zero !"
         result = num1 / num2
     else: 
-        print("Error invalid operator")
+        return "Error invalid operator"
+    return result
